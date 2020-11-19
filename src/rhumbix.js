@@ -4,7 +4,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
 
-const languages = [
+const terms = [
     {
         name:'about'
     },
@@ -45,7 +45,7 @@ const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : languages.filter(lang =>
+    return inputLength === 0 ? [] : terms.filter(lang =>
         lang.name.toLowerCase().slice(0, inputLength) === inputValue
     );
 };
